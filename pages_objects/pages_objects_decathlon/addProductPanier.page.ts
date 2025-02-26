@@ -12,9 +12,7 @@ async addProductPanier() {
     await this.page.getByRole('button', { name: 'Ajouter au panier' }).click();
     await this.page.getByRole('button', { name: 'Non merci, ne pas assurer mon article' }).click();
     await expect(this.page.locator('header').filter({ hasText: 'Ajouté au panier !' })).toBeVisible();
-
     await expect(this.page.getByRole('link', { name: '' })).toHaveText('1');
-
     await this.page.getByRole('link', { name: 'Visualiser mon panier ' }).click();
     await expect(this.page).toHaveURL('https://www.decathlon.fr/checkout/cart');
     }

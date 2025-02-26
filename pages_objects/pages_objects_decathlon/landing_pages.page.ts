@@ -1,5 +1,4 @@
 import { expect, type Page } from "@playwright/test";
-import { url } from 'inspector';
 
 export class LandingPages {
     readonly page: Page;
