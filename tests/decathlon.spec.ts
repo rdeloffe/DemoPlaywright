@@ -1,6 +1,6 @@
-import { test, expect } from '@playwright/test';
-import { LandingPages } from '../pages_objects/landing_pages.page';
-import { AddProductPanier } from '../pages_objects/addProductPanier.page';
+import { test } from '@playwright/test';
+import { LandingPages } from '../pages_objects/pages_objects_decathlon/landing_pages.page';
+import { AddProductPanier } from '../pages_objects/pages_objects_decathlon/addProductPanier.page';
 
 test('Aller sur la page velo', async ({ page }) => {
     const landingPages = new LandingPages(page);
@@ -13,5 +13,6 @@ test ('Add_3rd_velo_panier' , async ({ page }) => {
     await landing_pages.onpenSearchAndClick();
     const addProductPanier = new AddProductPanier(page);
     await addProductPanier.addProductPanier();
+    
 });
 
