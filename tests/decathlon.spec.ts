@@ -26,6 +26,7 @@ import { AddProductPanier } from '../pages_objects/pages_objects_decathlon/addPr
 test('Verify navigation to decathlon.fr', async ({ page }) => {
     const landingPages = new LandingPages(page);
     await landingPages.openDecathlon();
+    await landingPages.acceptCookies();
 });
 
  
@@ -88,4 +89,21 @@ test('Verify accessing the cart', async ({ page }) => {
 test('Verify the checkout process', async ({ page }) => {
     const landingPages = new LandingPages(page);
     await landingPages.checkoutProcess();
+});
+
+//Trier les résultats du moins cher au plus cher et vérifier l’ordre des prix.
+
+test("Trier les résultats du moins cher au plus cher ", async ({ page }) => {
+    const landingPages = new LandingPages(page);
+    await landingPages.sortResults();
+});
+
+test("Changemment plage de prix ", async ({ page }) => {
+    const landingPages = new LandingPages(page);
+    await landingPages.changePriceRange();
+});
+
+test("Vider le panier ", async ({ page }) => {
+    const landingPages = new LandingPages(page);
+    await landingPages.emptyCart();
 });
